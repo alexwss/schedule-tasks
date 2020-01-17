@@ -20,7 +20,7 @@
 		<custom.artifactId>schedule-tasks</custom.artifactId>
 		<custom.solution>scheduletasks</custom.solution>
 		<custom.generate.path>${project.basedir}/src/main/java/com/ciandt/scheduletasks/generated</custom.generate.path>
-        <springfox-version>2.7.0</springfox-version>	
+		<springfox-version>2.7.0</springfox-version>
 	</properties>
 
 	<dependencies>
@@ -59,17 +59,17 @@
 			<version>2.0.8</version>
 		</dependency>
 
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger2</artifactId>
-            <version>${springfox-version}</version>
-        </dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>${springfox-version}</version>
+		</dependency>
 
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger-ui</artifactId>
-            <version>${springfox-version}</version>
-        </dependency>		
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>${springfox-version}</version>
+		</dependency>
 
 	</dependencies>
 
@@ -86,8 +86,12 @@
 				<groupId>io.swagger.codegen.v3</groupId>
 				<artifactId>swagger-codegen-maven-plugin</artifactId>
 				<version>3.0.8</version>
-	
-
+				<executions>
+					<execution>
+						<id>server-generator</id>
+						<goals>
+							<goal>generate</goal>
+						</goals>
 						<configuration>
 							<inputSpec>${project.basedir}/src/main/resources/swagger/openapi.yaml</inputSpec>
 							<language>spring</language>
@@ -99,10 +103,10 @@
 								<java8>true</java8>
 								<dateLibrary>java8</dateLibrary>
 							</configOptions>
-							<generateSupportingFiles>false</generateSupportingFiles>							
+							<generateSupportingFiles>false</generateSupportingFiles>
 						</configuration>
-
-
+					</execution>
+				</executions>
 			</plugin>
 
 			<plugin>
@@ -125,13 +129,13 @@
 									<fileset dir="${basedir}/target/generated-sources/swagger/src/main/java/com/ciandt/scheduletasks/generated" includes="**/*" />
 								</copy>
 								<echo message="Deleting path -> ${basedir}/target/generated-sources" />
-								<!--delete dir="${basedir}/target/generated-sources" /-->
+								<delete dir="${basedir}/target/generated-sources"/>
 							</tasks>
 						</configuration>
 					</execution>
+					
 				</executions>
 			</plugin>
-
 		</plugins>
 
 	</build>
