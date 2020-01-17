@@ -8,10 +8,10 @@
 		<version>2.2.3.BUILD-SNAPSHOT</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>${custom.groupId}</groupId>
-	<artifactId>${custom.artifactId}</artifactId>
+	<groupId>com.ciandt</groupId>
+	<artifactId>schedule-tasks</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>${custom.artifactId}</name>
+	<name>schedule-tasks</name>
 	<description>Sample about schedule tasks</description>
 
 	<properties>
@@ -128,7 +128,6 @@
 									<!-- Watch for a solution for this -->
 									<fileset dir="${basedir}/target/generated-sources/swagger/src/main/java/com/ciandt/scheduletasks/generated" includes="**/*" />
 								</copy>
-								<echo message="Deleting path -> ${basedir}/target/generated-sources" />
 								<delete dir="${basedir}/target/generated-sources"/>
 							</tasks>
 						</configuration>
