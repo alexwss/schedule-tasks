@@ -118,14 +118,14 @@
 						</goals>
 						<configuration>
 							<tasks>
-								<delete dir="${custom.generate.path}"/>
-								<mkdir dir="${custom.generate.path}"/>
+								<delete dir="${custom.generate.path}" failonerror="false"/>
+								<mkdir dir="${custom.generate.path}" />
 								<copy todir="${custom.generate.path}">
 									<!-- Watch for a solution for this -->
 									<fileset dir="${basedir}/target/generated-sources/swagger/src/main/java/com/ciandt/scheduletasks/generated" includes="**/*" />
 								</copy>
 								<echo message="Deleting path -> ${basedir}/target/generated-sources" />
-								<delete dir="${basedir}/target/generated-sources" />
+								<!--delete dir="${basedir}/target/generated-sources" /-->
 							</tasks>
 						</configuration>
 					</execution>
