@@ -20,7 +20,7 @@
 		<custom.artifactId>schedule-tasks</custom.artifactId>
 		<custom.solution>scheduletasks</custom.solution>
 		<custom.generate.path>${project.basedir}/src/main/java/com/ciandt/scheduletasks/generated</custom.generate.path>
-		<springfox-version>2.7.0</springfox-version>
+		<springfox-version>2.10.0</springfox-version>
 	</properties>
 
 	<dependencies>
